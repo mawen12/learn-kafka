@@ -13,6 +13,7 @@
     <description>Learn Kafka, Spring Kafka</description>
     <modules>
         <module>spring-kafka</module>
+        <module>kafka-sdk</module>
     </modules>
 
     <properties>
@@ -22,6 +23,23 @@
 
         <spring-boot.version>3.2.5</spring-boot.version>
     </properties>
+
+    <profiles>
+        <profile>
+            <id>spring-kafka</id>
+            <modules>
+                <module>spring-kafka</module>
+                <module>spring-kafka/spring-kafka-reply-template</module>
+            </modules>
+        </profile>
+
+        <profile>
+            <id>kafka-sdk</id>
+            <modules>
+                <module>kafka-sdk</module>
+            </modules>
+        </profile>
+    </profiles>
 
     <dependencyManagement>
         <dependencies>
